@@ -1,0 +1,85 @@
+
+Settings:
+  Messages:
+    Level up:
+      - '&9Evolving Tools &7| &fPickaxe started glowing, and suddenly evolved.'
+    Level up to 4:
+      - '&9Evolving Tools &7| &fPickaxe started glowing, and being harder.'
+    Level up to 5:
+      - '&9Evolving Tools &7| &fPickaxe started glowing, and being greedy.'
+    Level up to 6:
+      - '&9Evolving Tools &7| &fPickaxe started glowing, and having interest to self.'
+    Level up to 7:
+      - '&9Evolving Tools &7| &fPickaxe started glowing, and suddenly moving itself.'
+    Level up to 10:
+      - '&9Evolving Tools &7| &fPickaxe started glowing, and evolved to perfect pickaxe.'
+  Events:
+    - 'BlockBreak'
+Levels:
+  Level 1:
+    Exp: '250'
+    Attribute:
+      Enchant Helper:
+        Action:
+          - 'Grow DIG_SPEED 1'
+  Level 2:
+    Exp: '500'
+    Attribute:
+      Enchant Helper:
+        Action:
+          - 'Grow DIG_SPEED 1'
+  Level 3:
+    Exp: '1000'
+    Attribute:
+      Enchant Helper:
+        Action:
+          - 'Grow DIG_SPEED 1'
+  Level 4:
+    Exp: '3000'
+    Attribute:
+      Enchant Helper:
+        Action:
+          - 'Grow DURABILITY 1'
+  Level 5:
+    Exp: '6000'
+    Attribute:
+      Enchant Helper:
+        Action:
+          - 'Grow DURABILITY 1'
+          - 'Grow LOOT_BONUS_BLOCKS 1'
+  Level 6:
+    Exp: '24000'
+    Attribute:
+      Enchant Helper:
+        Action:
+          - 'Grow DURABILITY 1'
+          - 'Grow LOOT_BONUS_BLOCKS 1'
+          - 'Grow DIG_SPEED 1'
+  Level 7:
+    Exp: '48000'
+    Attribute:
+      Enchant Helper:
+        Action:
+          - 'Grow DURABILITY 2'
+          - 'Grow DIG_SPEED 1'
+  Level 8:
+    Exp: '100000'
+    Attribute:
+      Enchant Helper:
+        Action:
+          - 'Grow WATER_WORKER 3'
+          - 'Grow OXYGEN 1'
+  Level 9:
+    Exp: '300000'
+    Attribute:
+      Enchant Helper:
+        Action:
+          - 'Grow DIG_SPEED 2'
+          - 'Grow LOOT_BONUS_BLOCK 3'
+  Level 10:
+    Exp: '400000'
+    Attribute:
+      Enchant Helper:
+        Action:
+          - 'Grow DAMAGE_ALL 4'
+          - 'Grow FIRE_ASPECT 2'

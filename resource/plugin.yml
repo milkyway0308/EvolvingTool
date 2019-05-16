@@ -1,0 +1,4 @@
+name: EvolvingTools
+version: 1.0
+main: skywolf46.EvolvingTools.EvolvingTools
+softdepend: [CommandAnnotation]
