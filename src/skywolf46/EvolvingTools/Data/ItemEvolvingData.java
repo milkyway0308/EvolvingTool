@@ -5,6 +5,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import skywolf46.EvolvingTools.EvolvingTools;
+import skywolf46.EvolvingTools.Util.ItemLoreUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,6 +18,7 @@ public class ItemEvolvingData {
     private int exp = 0;
     private int loreLine = -1;
     private ItemStack item;
+    private ItemLoreUtil.TagData tag;
 
     public ItemEvolvingData(ItemStack item) {
         this.item = item;
@@ -30,10 +32,15 @@ public class ItemEvolvingData {
                     level = Integer.parseInt(mat.group("Lv"));
                     exp = Integer.parseInt(mat.group("exp"));
                     evolveData = EvolvingTools.getEvolveData(evolve);
+                    tag = new ItemLoreUtil.TagData(mat.group("Attributes"));
                     break;
                 }
             }
         }
+    }
+
+    public ItemLoreUtil.TagData getTag() {
+        return tag;
     }
 
     public void updateItem() {
@@ -65,6 +72,7 @@ public class ItemEvolvingData {
                         .replace("<exp>", String.valueOf(exp))
                         .replace("<maxExp>", evolveData.getMaxExp(level) == -1 || evolveData.getMaxExp(level + 1) == -1 ? "∞" : String.valueOf(evolveData.getMaxExp(level)))
                         .replace("<progressBar>", progress.toString())
+                + tag.format()
         );
         meta.setLore(lore);
         item.setItemMeta(meta);

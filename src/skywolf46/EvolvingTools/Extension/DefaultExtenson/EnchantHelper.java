@@ -41,10 +41,10 @@ public class EnchantHelper extends AttributeExtension {
             if(parsed >= 65535)
                 parsed = 65534;
             switch (split[0].toLowerCase()){
-                case "grow":
+                case "add":
                     data.put(ench,parsed);
                     break;
-                case "reduce":
+                case "subtract":
                     data.put(ench,-parsed);
                     break;
                 case "set":

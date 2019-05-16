@@ -2,6 +2,7 @@ package skywolf46.EvolvingTools;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 import skywolf46.CommandAnnotation.API.MinecraftAbstractCommand;
@@ -9,8 +10,10 @@ import skywolf46.CommandAnnotation.CommandAnnotation;
 import skywolf46.EvolvingTools.Command.ReloadEvolveCommand;
 import skywolf46.EvolvingTools.Command.SetEvolveCommand;
 import skywolf46.EvolvingTools.Data.EvolvingData;
+import skywolf46.EvolvingTools.Extension.DefaultExtenson.DurabilityHelper;
 import skywolf46.EvolvingTools.Extension.DefaultExtenson.EnchantHelper;
 import skywolf46.EvolvingTools.Listeners.BlockListener;
+import skywolf46.EvolvingTools.Listeners.EntityListener;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -30,7 +33,9 @@ public class EvolvingTools extends JavaPlugin {
         inst = this;
         Bukkit.getConsoleSender().sendMessage("§9EvolvingTools §7| §fStarting plugin");
         Bukkit.getPluginManager().registerEvents(new BlockListener(),this);
+        Bukkit.getPluginManager().registerEvents(new EntityListener(),this);
         new EnchantHelper().registerExtension("Enchant Helper");
+        new DurabilityHelper().registerExtension("Durability Helper");
         if (!new File(getDataFolder(), "config.yml").exists()) {
             saveResource("config.yml", true);
             reloadConfig();
@@ -53,9 +58,9 @@ public class EvolvingTools extends JavaPlugin {
                         .replace("\\<Lv\\>", "(?<Lv>\\d+)")
                         .replace("\\<exp\\>", "(?<exp>\\d+){1,19}")
                         .replace("\\<maxExp\\>", "(?<Nothing>.*?)")
-                        .replace("\\<progressBar\\>", "(?<Serious>.*?)")
+                        .replace("\\<progressBar\\>", "(?<Serious>.*?)") + "(?<Attributes>.*)"
         );
-        reloadEvolveData();
+        reloadEvolveData(Bukkit.getConsoleSender());
         Bukkit.getConsoleSender().sendMessage("§9EvolvingTools §7| §fEvolution of tool has just started.");
 
     }
@@ -65,7 +70,7 @@ public class EvolvingTools extends JavaPlugin {
         return inst;
     }
 
-    public static void reloadEvolveData() {
+    public static void reloadEvolveData(CommandSender cs) {
         evolves.clear();
         File folder = new File(inst.getDataFolder(), "EvolutionTypes");
         if (!folder.exists()) {
@@ -79,10 +84,10 @@ public class EvolvingTools extends JavaPlugin {
                     continue;
                 YamlConfiguration load = YamlConfiguration.loadConfiguration(f);
                 evolves.put(fileName,new EvolvingData(load));
-                Bukkit.getConsoleSender().sendMessage("§9EvolvingTools §7| §7Loaded evolving type " + fileName);
+                cs.sendMessage("§9EvolvingTools §7| §7Loaded evolving type " + fileName);
             }catch (Exception ex){
                 ex.printStackTrace();
-                Bukkit.getConsoleSender().sendMessage("§9EvolvingTools §7| §cFailed to load evolving type " + fileName);
+                cs.sendMessage("§9EvolvingTools §7| §cFailed to load evolving type " + fileName);
             }
         }
     }

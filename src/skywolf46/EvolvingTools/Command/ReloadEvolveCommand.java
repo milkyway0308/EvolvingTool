@@ -18,7 +18,7 @@ public class ReloadEvolveCommand extends MinecraftAbstractCommand {
             p.sendMessage("§9Evolving Tools §7| §cPermission denied.");
             return false;
         }
-        EvolvingTools.reloadEvolveData();
+        EvolvingTools.reloadEvolveData(p);
         return false;
     }
 

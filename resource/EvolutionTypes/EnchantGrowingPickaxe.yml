@@ -21,65 +21,85 @@ Levels:
     Attribute:
       Enchant Helper:
         Action:
-          - 'Grow DIG_SPEED 1'
+          - 'Add DIG_SPEED 1'
+      Durability Helper:
+        Action: 'Set 0'
   Level 2:
     Exp: '500'
     Attribute:
       Enchant Helper:
         Action:
-          - 'Grow DIG_SPEED 1'
+          - 'Add DIG_SPEED 1'
+      Durability Helper:
+        Action: 'Set 0'
   Level 3:
     Exp: '1000'
     Attribute:
       Enchant Helper:
         Action:
-          - 'Grow DIG_SPEED 1'
+          - 'Add DIG_SPEED 1'
+      Durability Helper:
+        Action: 'Set 0'
   Level 4:
     Exp: '3000'
     Attribute:
       Enchant Helper:
         Action:
-          - 'Grow DURABILITY 1'
+          - 'Add DURABILITY 1'
+      Durability Helper:
+        Action: 'Set 0'
   Level 5:
     Exp: '6000'
     Attribute:
       Enchant Helper:
         Action:
-          - 'Grow DURABILITY 1'
-          - 'Grow LOOT_BONUS_BLOCKS 1'
+          - 'Add DURABILITY 1'
+          - 'Add LOOT_BONUS_BLOCKS 1'
+      Durability Helper:
+        Action: 'Set 0'
   Level 6:
     Exp: '24000'
     Attribute:
       Enchant Helper:
         Action:
-          - 'Grow DURABILITY 1'
-          - 'Grow LOOT_BONUS_BLOCKS 1'
-          - 'Grow DIG_SPEED 1'
+          - 'Add DURABILITY 1'
+          - 'Add LOOT_BONUS_BLOCKS 1'
+          - 'Add DIG_SPEED 1'
+      Durability Helper:
+        Action: 'Set 0'
   Level 7:
     Exp: '48000'
     Attribute:
       Enchant Helper:
         Action:
-          - 'Grow DURABILITY 2'
-          - 'Grow DIG_SPEED 1'
+          - 'Add DURABILITY 2'
+          - 'Add DIG_SPEED 1'
+      Durability Helper:
+        Action: 'Set 0'
   Level 8:
     Exp: '100000'
     Attribute:
       Enchant Helper:
         Action:
-          - 'Grow WATER_WORKER 3'
-          - 'Grow OXYGEN 1'
+          - 'Add WATER_WORKER 3'
+          - 'Add OXYGEN 1'
+      Durability Helper:
+        Action: 'Set 0'
   Level 9:
     Exp: '300000'
     Attribute:
       Enchant Helper:
         Action:
-          - 'Grow DIG_SPEED 2'
-          - 'Grow LOOT_BONUS_BLOCK 3'
+          - 'Add DIG_SPEED 2'
+          - 'Add LOOT_BONUS_BLOCK 3'
+      Durability Helper:
+        Action: 'Set 0'
   Level 10:
     Exp: '400000'
     Attribute:
       Enchant Helper:
         Action:
-          - 'Grow DAMAGE_ALL 4'
-          - 'Grow FIRE_ASPECT 2'
+          - 'Add DAMAGE_ALL 4'
+          - 'Add FIRE_ASPECT 2'
+      Durability Helper:
+        Action: 'Set 0'
