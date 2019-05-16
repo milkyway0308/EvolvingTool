@@ -96,7 +96,7 @@ public class ItemEvolvingData {
                     for (String n : str)
                         p.sendMessage(n);
             }
-            evolveData.loopExtension(item, this);
+            evolveData.loopExtension(p,item, this);
         }
         updateItem();
     }
