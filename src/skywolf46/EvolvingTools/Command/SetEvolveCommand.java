@@ -38,6 +38,7 @@ public class SetEvolveCommand extends MinecraftAbstractCommand {
                 ItemEvolvingData ie = new ItemEvolvingData(itemInHand);
                 if(ie.isEvolveItem()){
                     p.sendMessage("§9Evolving Tools §7| §cCannot apply evolve to item : Item already evolved");
+                    return false;
                 }
                 EvolvingData dat = EvolvingTools.getEvolveData(data.getCommandArgument(0, data.length()));
                 if (dat == null)
@@ -50,7 +51,7 @@ public class SetEvolveCommand extends MinecraftAbstractCommand {
                             .replace("<Lv>", String.valueOf(1))
                             .replace("<exp>", String.valueOf(0))
                             .replace("<maxExp>", dat.getMaxExp(1) == -1 || dat.getMaxExp(2) == -1 ? "∞" : String.valueOf(dat.getMaxExp(1)))
-                            .replace("<progressBar>", "§7|||||||||||||||§f")
+                            .replace("<progressBar>", "§7|||||||§f")
                     );
                     meta.setLore(lore);
                     itemInHand.setItemMeta(meta);
