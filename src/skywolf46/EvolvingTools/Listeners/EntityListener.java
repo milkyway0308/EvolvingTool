@@ -25,10 +25,10 @@ public class EntityListener implements Listener {
             for (ItemStack item : itemArray) {
                 ItemEvolvingData evolve = new ItemEvolvingData(item);
                 if (evolve.isEvolveItem()) {
-                    if (evolve.getEvolveData().isListeningEvent("HitPlayer")) {
+                    if (evolve.getEvolveData().isListeningEvent("HitEntity")) {
                         evolve.addExp(p,1);
                     }
-                    if (evolve.getEvolveData().isListeningEvent("DamagePlayer")) {
+                    if (evolve.getEvolveData().isListeningEvent("DamageEntity")) {
                         evolve.addExp(p, (int) e.getFinalDamage());
                     }
                 }

@@ -1,6 +1,7 @@
 package skywolf46.EvolvingTools.Data;
 
 import org.bukkit.ChatColor;
+import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -22,6 +23,8 @@ public class ItemEvolvingData {
 
     public ItemEvolvingData(ItemStack item) {
         this.item = item;
+        if(item == null || item.getType() == Material.AIR)
+            return;
         if (item.hasItemMeta() && item.getItemMeta().hasLore()) {
             List<String> text = item.getItemMeta().getLore();
             for (int i = 0; i < text.size(); i++) {
